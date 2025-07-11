@@ -2,6 +2,14 @@
 defineOptions({ name: 'SkillsSection' });
 import SectionTitle from './SectionTitle.vue'
 
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
+const skills = ref([]);
+onMounted(async () => {
+try { const response = await
+axios.get('http://localhost:3000/api/skills'); skills.value = response.data; } catch (error) { console.error(error); }
+});
+
 // Daftar proyek
 const projects = [
   {
