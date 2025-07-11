@@ -1,6 +1,6 @@
 <script setup>
-defineOptions({ name: 'EducationSection' })
-import SectionTitle from './SectionTitle.vue'
+import SectionTitle from './SectionTitle.vue';
+defineOptions({ name: 'EducationSection' });
 
 const educationHistory = [
   { id: 1, period: '2023 - Sekarang', institution: 'Universitas Amikom Yogyakarta', major: 'S1 - Informatika' },
@@ -12,14 +12,14 @@ const educationHistory = [
   <section id="pendidikan" class="py-20 bg-[#D5B893]">
     <div class="container mx-auto px-6">
       <SectionTitle title="Riwayat Pendidikan" />
-
       <div class="relative">
         <!-- Garis tengah -->
         <div class="absolute h-full border-r-2 border-[#632024]" style="left: 50%;"></div>
 
+        <!-- Loop riwayat pendidikan -->
         <div v-for="(edu, index) in educationHistory" :key="edu.id" class="mb-12 flex justify-between items-center w-full">
-          
-          <!-- Kiri ke kanan -->
+
+          <!-- Kiri -->
           <div v-if="index % 2 === 0" class="w-full flex">
             <div class="w-1/2 pr-8 text-right">
               <p class="font-semibold text-[#632024]">{{ edu.period }}</p>
@@ -31,7 +31,7 @@ const educationHistory = [
             </div>
           </div>
 
-          <!-- Kanan ke kiri -->
+          <!-- Kanan -->
           <div v-else class="w-full flex">
             <div class="w-1/2 flex justify-end">
               <div class="w-4 h-4 bg-[#632024] rounded-full z-10"></div>
