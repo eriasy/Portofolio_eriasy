@@ -28,9 +28,7 @@ app.get('/api/education', (req, res) => {
   res.json(educationHistory);
 });
 
-app.get('/', (req, res) => {
-  res.send('✅ Backend berjalan. Gunakan endpoint /api/education untuk melihat data.');
-});
+
 // Jalankan server
 app.listen(PORT, () => {
   console.log(`✅ Server backend berjalan di http://localhost:${PORT}`);
