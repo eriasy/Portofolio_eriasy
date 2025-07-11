@@ -11,7 +11,7 @@ app.use(cors());
 const educationHistory = [
   {
     id: 1,
-    period: "2022 - Sekarang",
+    period: "2023 - Sekarang",
     institution: "Universitas Amikom Yogyakarta",
     major: "Informatika"
   },
