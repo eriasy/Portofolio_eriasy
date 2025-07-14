@@ -1,14 +1,3 @@
-// Contoh backend sederhana
-const express = require('express');
-const cors = require('cors');
-
-const app = express();
-const PORT = 3000;
-
-// Middleware: Izinkan request dari frontend (CORS)
-app.use(cors());
-
-// Data pendidikan
 const educationHistory = [
   {
     id: 1,
@@ -24,17 +13,21 @@ const educationHistory = [
   }
 ];
 
-// Tambahkan route untuk root agar tidak error saat akses /
-app.get('/', (req, res) => {
-  res.send('✅ Backend berjalan. Gunakan endpoint /api/education untuk melihat data.');
-});
+const skills = [
+  { name: "JavaScript", level: "Menengah" },
+  { name: "Vue.js", level: "Menengah" },
+  { name: "Tailwind CSS", level: "Menengah" }
+];
 
-// Endpoint utama: /api/education
-app.get('/api/education', (req, res) => {
-  res.json(educationHistory);
-});
+const projects = [
+  {
+    title: "Portofolio Web",
+    image: "https://example.com/portofolio.png",
+    description: "Website portofolio interaktif",
+    tech: ["Vue.js", "Tailwind", "Node.js"],
+    link: "https://your-portofolio.vercel.app"
+  }
+];
 
-// Jalankan server
-app.listen(PORT, () => {
-  console.log(`✅ Server berjalan di http://localhost:${PORT}`);
-});
+// ✅ Wajib diekspor agar bisa digunakan di seed.js
+module.exports = { educationHistory, skills, projects };
